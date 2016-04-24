@@ -6,7 +6,7 @@
 	<groupId>org.github.speesimon</groupId>
 	<artifactId>spee-sonarqube-plugin</artifactId>
 	<packaging>sonar-plugin</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	
 	<name>Spee SonarQube plugins</name>
 	<description>Plugin for SonarQube.
