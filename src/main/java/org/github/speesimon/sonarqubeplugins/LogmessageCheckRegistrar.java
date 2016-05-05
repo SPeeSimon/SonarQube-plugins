@@ -11,7 +11,6 @@
 package org.github.speesimon.sonarqubeplugins;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.github.speesimon.sonarqubeplugins.checks.Slf4jLogMessageCheck;
