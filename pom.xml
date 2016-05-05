@@ -7,23 +7,23 @@
 	<artifactId>spee-sonarqube-plugin</artifactId>
 	<packaging>sonar-plugin</packaging>
 	<version>0.2-SNAPSHOT</version>
-	
+
 	<name>Spee SonarQube plugins</name>
 	<description>Plugin for SonarQube.
 
 Currently available:
-RULE: Log messages should not use &quot;String.format()&quot;
-</description>
+RULE: Log messages should not use &quot;String.format()&quot; </description>
 
 	<properties>
 		<java.plugin.version>3.12</java.plugin.version>
+		<sonar.version>4.5.6</sonar.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.codehaus.sonar</groupId>
 			<artifactId>sonar-plugin-api</artifactId>
-			<version>4.5.6</version>
+			<version>${sonar.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -33,12 +33,13 @@ RULE: Log messages should not use &quot;String.format()&quot;
 			<version>${java.plugin.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+ 		<dependency>
 			<groupId>org.sonarsource.java</groupId>
 			<artifactId>java-frontend</artifactId>
 			<version>${java.plugin.version}</version>
+			<scope>compile</scope>
 		</dependency>
-		<dependency>
+ 		<dependency>
 			<groupId>org.sonarsource.sslr-squid-bridge</groupId>
 			<artifactId>sslr-squid-bridge</artifactId>
 			<version>2.6.1</version>
@@ -81,6 +82,7 @@ RULE: Log messages should not use &quot;String.format()&quot;
 				<configuration>
 					<pluginClass>org.github.speesimon.sonarqubeplugins.LogmessageCheckPlugin</pluginClass>
 					<pluginDescription>Spee SonareQube plugins</pluginDescription>
+					<basePlugin>java</basePlugin>
 				</configuration>
 			</plugin>
 
@@ -96,4 +98,9 @@ RULE: Log messages should not use &quot;String.format()&quot;
 		</plugins>
 	</build>
 	<url>https://github.com/SPeeSimon/SonarQube-plugins</url>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/SPeeSimon/SonarQube-plugins/issues</url>
+	</issueManagement>
+	
 </project>
