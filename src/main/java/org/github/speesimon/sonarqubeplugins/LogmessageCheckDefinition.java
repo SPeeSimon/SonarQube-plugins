@@ -13,7 +13,7 @@ package org.github.speesimon.sonarqubeplugins;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.github.speesimon.sonarqubeplugins.checks.AvoidStringFormatInMessage;
+import org.github.speesimon.sonarqubeplugins.checks.Slf4jLogMessageCheck;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.plugins.java.Java;
 import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
@@ -26,7 +26,7 @@ public class LogmessageCheckDefinition implements RulesDefinition {
 		repository.setName("speesimon");
 		
 		List<Class> checks = new ArrayList<>(1);
-		checks.add(AvoidStringFormatInMessage.class);
+		checks.add(Slf4jLogMessageCheck.class);
 		AnnotationBasedRulesDefinition.load(repository, Java.KEY, checks);
 
 		repository.done();

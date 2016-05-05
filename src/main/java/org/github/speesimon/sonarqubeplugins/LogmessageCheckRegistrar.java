@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.github.speesimon.sonarqubeplugins.checks.AvoidStringFormatInMessage;
+import org.github.speesimon.sonarqubeplugins.checks.Slf4jLogMessageCheck;
 import org.sonar.plugins.java.api.CheckRegistrar;
 import org.sonar.plugins.java.api.JavaCheck;
 
@@ -24,7 +24,7 @@ public class LogmessageCheckRegistrar implements CheckRegistrar {
 	public void register(RegistrarContext registrarContext) {
 		
 		List<Class<? extends JavaCheck>> classesChecks = new ArrayList<>();
-		classesChecks.add(AvoidStringFormatInMessage.class);
+		classesChecks.add(Slf4jLogMessageCheck.class);
 		List<Class<? extends JavaCheck>> testClassesChecks = Collections.emptyList();
 		registrarContext.registerClassesForRepository(LogmessageCheckDefinition.REPOSITORY_KEY, classesChecks, testClassesChecks);
 	}

@@ -49,13 +49,13 @@ import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
 @Rule(key = "Methods4logmsg", 
 	name = "Log messages should not use \"String.format()\" or method calls",
 	description = "Using <code>String.format()</code> or any other method call as a log message has an impact on the performance. "
-		+ "<br>Change it into a String with {}-placeholders, like <code>logger.debug(\"The negative effect on the performance is {}\", \"LOW\")</code>"
+		+ "<br>Change it into a String with {}-placeholders, like <code>logger.debug(\"The negative effect on the performance is {}\", LOW)</code>"
 		+ "<br>See <a href=\"http://www.slf4j.org/faq.html#logging_performance\">http://www.slf4j.org/faq.html#logging_performance</a>", 
 	tags = {"bad-practice", "convention", "suspicious", "performance" }, 
 	priority = Priority.MAJOR)
 @SqaleSubCharacteristic(RulesDefinition.SubCharacteristics.EFFICIENCY_COMPLIANCE)
 @SqaleConstantRemediation("10min")
-public class AvoidStringFormatInMessage extends SubscriptionVisitor {
+public class Slf4jLogMessageCheck extends SubscriptionVisitor {
 
 	private static final String STRING_CLASSNAME = "java.lang.String";
 	private static final String SLF4J_LOGGER_CLASSNAME = "org.slf4j.Logger";
