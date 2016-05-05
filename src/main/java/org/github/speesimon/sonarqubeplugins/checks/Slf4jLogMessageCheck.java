@@ -183,7 +183,7 @@ public class Slf4jLogMessageCheck extends SubscriptionVisitor {
 			return;
 		}
 
-		context.reportIssue(this, tree, "Avoid method call as a log messages.");
+		context.reportIssue(this, tree, "A method call should not be used as a log messages.");
 	}
 
 }
