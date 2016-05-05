@@ -149,9 +149,7 @@ public class AvoidStringFormatInMessage extends SubscriptionVisitor {
 	 */
 	private void checkPlus(ExpressionTree tree) {
 		BinaryExpressionTree plusArgument = (BinaryExpressionTree) tree;
-		if (isOnlyStringConcatenate(plusArgument)) {
-			context.reportIssue(this, tree, "Avoid String concatenating in log messages");
-		} else {
+		if (!isOnlyStringConcatenate(plusArgument)) {
 			context.reportIssue(this, tree, "Avoid Object concatenating in log messages");
 		}
 	}
