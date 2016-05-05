@@ -25,7 +25,7 @@ public class LogmessageCheckRegistrar implements CheckRegistrar {
 		
 		List<Class<? extends JavaCheck>> classesChecks = new ArrayList<>();
 		classesChecks.add(Slf4jLogMessageCheck.class);
-		List<Class<? extends JavaCheck>> testClassesChecks = Collections.emptyList();
+		List<Class<? extends JavaCheck>> testClassesChecks = classesChecks;
 		registrarContext.registerClassesForRepository(LogmessageCheckDefinition.REPOSITORY_KEY, classesChecks, testClassesChecks);
 	}
 
