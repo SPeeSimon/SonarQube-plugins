@@ -23,10 +23,10 @@ public class LogmessageCheckRegistrar implements CheckRegistrar {
 	@Override
 	public void register(RegistrarContext registrarContext) {
 		
-		List<Class<? extends JavaCheck>> list = new ArrayList<>();
-		list.add(AvoidStringFormatInMessage.class);
-		List<Class<? extends JavaCheck>> list2 = Collections.emptyList();
-		registrarContext.registerClassesForRepository(LogmessageCheckDefinition.REPOSITORY_KEY, list, list2);
+		List<Class<? extends JavaCheck>> classesChecks = new ArrayList<>();
+		classesChecks.add(AvoidStringFormatInMessage.class);
+		List<Class<? extends JavaCheck>> testClassesChecks = Collections.emptyList();
+		registrarContext.registerClassesForRepository(LogmessageCheckDefinition.REPOSITORY_KEY, classesChecks, testClassesChecks);
 	}
 
 }
